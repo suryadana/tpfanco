@@ -1,0 +1,22 @@
+#summary Changelog
+#labels Featured
+
+= 2011-09-03 =
+
+ tpfand (0.95-ubuntu2)
+   * first public release of the Tpfanco project
+   * fixed [https://bugs.launchpad.net/tp-fan/+bug/623718 Launchpad Bug #623718]. Ubuntu Lucid, Ubuntu Maverick and Ubuntu Natty are officially supported
+   * fixed [https://bugs.launchpad.net/tp-fan/+bug/575199 Launchpad Bug #575199]. Use dmidecode instead of hal
+   * fixed [https://bugs.launchpad.net/tp-fan/+bug/480700 Launchpad Bug #480700]. Install modules to /usr/pyshared/ instead of /usr/lib/python2.5/site-packages
+   * fixed [https://bugs.launchpad.net/tp-fan/+bug/450670 Launchpad Bug #450670]. Set polling interval from 2 s to 4 s.This should save up to 10 wakeups.
+
+ tpfan-admin (0.96-ubuntu2)
+   * first public release of the Tpfanco project
+   * Ubuntu Lucid, Ubuntu Maverick and Ubuntu Natty are officially supported
+   * fixed [https://bugs.launchpad.net/tp-fan/+bug/480700 Launchpad Bug #480700]. Install modules to /usr/pyshared/ instead of /usr/lib/python2.5/site-packages
+   * better KDE support. If KDM is detected, tpfan-admin uses kdesudo instead of gksudo
+   * profiles for submitting now get saved in the /tmp/tpfand-profile directory. You must manually email the profile to the Tpfanco project
+
+ tpfand-profiles (20110901-ubuntu2)
+   * first public release of the Tpfanco project
+   * add new profile for Z61m
