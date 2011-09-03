@@ -16,7 +16,8 @@ Let's suppose you want to see the changes in *tpfand_0.95-ubuntu2_all.deb* compa
 *tpfand_0.95-ubuntu2.debian.tar.gz*, extract it and check the patches folder. It lists all the changes in diff format.
 
 = How can I submit my profile to the project? =
-Start tpfan-admin and click *Submit profile*. After you hit *Yes* your profile will be saved to _/tmp/tpfand-profile/_. Please email the file to the project as it is. It will be reviewed and then probably included to the tpfand-profiles package.
+Start tpfan-admin and click *Submit profile*. After you hit *Yes* your profile will be saved to _/tmp/tpfand-profile/_. Please email the file to mailto:DFEW.Entwickler@gmail.com  as it is. 
+It will be reviewed and then probably included to the tpfand-profiles package.
 
 = Does this work with notebooks other than IBM/Lenovo Thinkpad? =
 No. tp-fan controls the fan speed via thinkpad_acpi kernel module which is only available for IBM/Lenovo Thinkpads.
@@ -54,8 +55,6 @@ sudo rmmod thinkpad_acpi
 sudo modprobe thinkpad_acpi
 sudo /etc/init.d/tpfand restart
 }}}
-
-
 
 
 
