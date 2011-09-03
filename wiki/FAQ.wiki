@@ -1,0 +1,42 @@
+#summary Frequently asked questions
+#labels Phase-Deploy
+= Frequently asked questions =
+
+<wiki:toc max_depth="2" />
+= Where is the source code? =
+To get the latest source code just check out the SVN repository of the project:
+{{{
+svn checkout http://tpfanco.googlecode.com/svn/trunk/ tpfanco-read-only 
+}}}
+Also be sure to take a look at the [http://code.google.com/p/tpfanco/downloads/list?can=1&q=&colspec=Filename+Summary+Uploaded+ReleaseDate+Size+DownloadCount Downloads section] where you'll find tarballs and files specific to Debian packaging.
+
+= What are the changes compared to the last version of Sebastian Urban's tp-fan? =
+The initial release was uploaded to the SVN repo as it is without much comments. 
+Let's suppose you want to see the changes in *tpfand_0.95-ubuntu2_all.deb* compared to the original source *tpfand_0.95.orig.tar.gz*. Just [http://code.google.com/p/tpfanco/downloads/list?can=1&q=&colspec=Filename+Summary+Uploaded+ReleaseDate+Size+DownloadCount download]
+*tpfand_0.95-ubuntu2.debian.tar.gz*, extract it and check the patches folder. It lists all the changes in diff format.
+
+= How can I submit my profile to the project? =
+Start tpfan-admin and click *Submit profile*. After you hit *Yes* your profile will be saved to _/tmp/tpfand-profile/_. Please email the file to the project as it is. It will be reviewed and then probably included to the tpfand-profiles package.
+
+= Does this work with notebooks other than IBM/Lenovo Thinkpad? =
+No. tp-fan controls the fan speed via thinkpad_acpi kernel module which is only available for IBM/Lenovo Thinkpads.
+
+= Does this work with my Thinkpad XYZ? =
+This depends on whether your Thinkpad is supported by the thinkpad_acpi kernel module. Check if the thinkpad_acpi module is loaded at all
+{{{
+lsmod | grep thinkpad_acpi
+}}}
+and if not, try to load it by hand
+{{{
+sudo modprobe thinkpad_acpi
+}}}
+If that fails, tpfand will not work with your Thinkpad.
+
+
+= I can't see any difference between certain fan levels like 15% and 30% =
+Different Thinkpads have different fan levels. For example, on a Thinkpad Z61m setting 15% and 30% result into the identical fan speed. The same goes for 45% and 60%. This is a hardware limitation and not a bug of tp-fan.
+
+
+
+
+
