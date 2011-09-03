@@ -30,4 +30,4 @@ Please make sure you are running this program on a supported IBM/Lenovo ThinkPad
 a recent thinkpad_acpi module is loaded with fan_control=1 and tpfand has been started.
 }}}
 
-These errors are normal if you're installing _tpfan_ and _tpfan-admin_ for the first time. As long as the packages are installed without errors, there is nothing to be worried about. Just restart your system and should be fine. Check the [http://code.google.com/p/tpfanco/wiki/FAQ?ts=1315049475&updated=FAQ#Why_do_I_have_to_restart_my_system_after_installing_tp-fan_packa FAQ] for more information on why you need to restart.
+These errors are normal if you're installing _tpfan_ and _tpfan-admin_ for the first time. As long as the packages are installed without errors, there is nothing to be worried about. Just restart your system and all should be fine. Check the [http://code.google.com/p/tpfanco/wiki/FAQ?ts=1315049475&updated=FAQ#Why_do_I_have_to_restart_my_system_after_installing_tp-fan_packa FAQ] for more information on why you need to restart.
