@@ -1,5 +1,5 @@
 #summary Frequently asked questions
-#labels Phase-Deploy
+#labels Phase-Deploy,Featured
 = Frequently asked questions =
 
 <wiki:toc max_depth="2" />
@@ -35,8 +35,6 @@ If that fails, tpfand will not work with your Thinkpad.
 
 = I can't see any difference between certain fan levels like 15% and 30% =
 Different Thinkpads have different fan levels. For example, on a Thinkpad Z61m setting 15% and 30% result into the identical fan speed. The same goes for 45% and 60%. This is a hardware limitation and not a bug of tp-fan.
-
-
 
 
 
