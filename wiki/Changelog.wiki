@@ -1,5 +1,8 @@
 #summary Changelog
-#labels Featured
+
+= 2011-09-17 =
+ tpfand (0.95-ubuntu3)
+   * fix incorrect treatment of disconnected sensors
 
 = 2011-09-03 =
 
