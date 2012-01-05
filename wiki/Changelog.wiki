@@ -1,5 +1,11 @@
 #summary Changelog
 
+= 2012-01-05 =
+ tpfand-profiles (20120105)
+   * add new profile for T410s (thanks to Gregor K.)
+   * add new profile for X220 (thanks to gru3n3r)
+   * fix issue 5 (thanks to dhahler)
+   
 = 2011-09-17 =
  tpfand (0.95-ubuntu3)
    * fix incorrect treatment of disconnected sensors
