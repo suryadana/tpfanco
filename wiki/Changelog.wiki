@@ -1,5 +1,20 @@
 #summary Changelog
 
+
+= 2012-01-11 =
+
+tpfan-admin (0.96.2)
+  * remove interval mode
+  * don't show disconnected sensors
+
+tpfand (0.95.2)
+  * fix fan pulsing on T410s (thanks to Shad for testing!)
+  * remove interval mode
+  * add debug mode. To activate stop tpfand ('sudo /etc/init.d/tpfand stop') and  run 'sudo /usr/sbin/tpfand --debug'
+
+tpfand-profiles (20120111)
+  * remove some profiles that contained the from now on unsuppored interval mode 
+
 = 2012-01-05 =
  tpfand-profiles (20120105)
    * add new profile for T410s (thanks to Gregor K.)
