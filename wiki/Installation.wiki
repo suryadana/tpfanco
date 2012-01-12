@@ -3,7 +3,7 @@
 
 = Supported Ubuntu versions =
 
-Tpfanco officially suports all Ubuntu versions older than Karmic (i.e. Lucid, Maverick, Natty etc.). 
+Tpfanco officially suports all Ubuntu versions newer than Karmic (i.e. Lucid, Maverick, Natty etc.). 
 
 To install simply download 3 deb packages from the [http://code.google.com/p/tpfanco/ project's front page]: _tpfand_, _tpfan-admin_ and _tpfan-profiles_.
 
