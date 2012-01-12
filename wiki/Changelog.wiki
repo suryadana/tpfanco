@@ -1,4 +1,5 @@
 #summary Changelog
+#labels Featured
 
 
 = 2012-01-11 =
