@@ -2,8 +2,8 @@
 #labels Featured
 
 = 2012-03-05 =
- tpfand-profiles (20120105)
-   * add new profile for X300 (6478-14G) (thanks to Oliver D.)
+tpfand-profiles (20120105)
+  * add new profile for X300 (6478-14G) (thanks to Oliver D.)
 
 = 2012-01-11 =
 
