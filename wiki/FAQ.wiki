@@ -57,8 +57,11 @@ sudo /etc/init.d/tpfand restart
 }}}
 
 
+= How can I contact the developers? =
+You can drop me an email to mailto:DFEW.Entwickler@gmail.com. My preferred languages are English and German. I can also read French and Russian but it might take some time for me to answer you in those languages ;)
 
+For German speaking users a support thread in German ThinkPad-Forum.de is available:
 
-
+[http://thinkpad-forum.de/threads/121896-Projektvorstellung-Tpfanco-Wartung-und-Paketierung-von-tp-fan Projektvorstellung: Tpfanco - Wartung und Paketierung von tp-fan]
 
 
