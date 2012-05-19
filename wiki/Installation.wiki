@@ -3,14 +3,16 @@
 
 = Supported Ubuntu versions =
 
-Tpfanco officially suports all Ubuntu versions newer than Karmic (i.e. Lucid, Maverick, Natty, Oneiric etc.).
+At the moment all Ubuntu versions (including Kubuntu, Xubuntu and Lubuntu) beginning with 10.04 are officially supported.
+
+I expect it to work with other Debian-based distributions like  Debian and Linux Mint as well, although I didn't test that explicitly.
 
 To install simply download 3 deb packages from the [http://code.google.com/p/tpfanco/ project's front page]: _tpfand_, _tpfan-admin_ and _tpfan-profiles_.
 
 First install _tpfand_, then _tpfan-profiles_ and finally _tpfan-admin_. Reboot your system. Now open tpfan-admin and click *Unlock*. Select *Control system fan by software*. If there's no profile for your Thinkpad you will have to configure fan speeds by hand.
 
 = Unsupported Ubuntu versions =
-For Ubuntu versions older than Lucid (i.e. Karmic, Jaunty, Intrepid, Hardy) use old packages from [https://launchpad.net/~tp-fan/+archive/ppa Sebastian Urban's Launchpad page]
+For Ubuntu versions older than 10.04 use old packages from [https://launchpad.net/~tp-fan/+archive/ppa Sebastian Urban's Launchpad page]
 
 = Possible confusements =
 
