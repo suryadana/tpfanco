@@ -1,6 +1,10 @@
 #summary Changelog
 #labels Featured
 
+= 2012-05-21 =
+tpfand-profiles (20120521)
+  * add new profile for L420 (78545HG) (thanks to Torsten R.)
+
 = 2012-04-28 =
 tpfand-profiles (20120428)
   * add new profile for X121e (3045-6RG) (thanks to Ingo H.)
