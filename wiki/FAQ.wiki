@@ -37,6 +37,19 @@ If that fails, tpfand will not work with your Thinkpad.
 = I can't see any difference between certain fan levels like 15% and 30% =
 Different Thinkpads have different fan levels. For example, on a Thinkpad Z61m setting 15% and 30% result into the identical fan speed. The same goes for 45% and 60%. This is a hardware limitation and not a bug of tp-fan.
 
+
+= Tpfanco is acting weird. What can I do? =
+If tpfanco is acting weird on your Thinkpad and you *are* sure that this is not because you configured it wrong, you might try to run tpfand in debug mode. While
+running in debug mode tpfand will provide a lot of additional information that might help you to understand what's going wrong. To activate the debug mode, you must first stop tpfand daemon and then run tpfand by hand with "--debug" option
+{{{
+sudo /etc/init.d/tpfand stop
+sudo /usr/sbin/tpfand --debug
+}}}
+To return to the normal operating mode, press Ctrl-C and run
+{{{
+sudo /etc/init.d/tpfand start
+}}}
+
 = Why do I have to restart my system after installing tp-fan packages? =
 Most Thinkpads running Ubuntu usually have the thinkpad_acpi module loaded by default. In order to be able to control the fan, tpfand requires that this module is loaded with a special parameter "fan_control=1". To achieve this, tpfand creates a file _/etc/modprobe.d/tpfand.conf_ with the following content
 {{{
@@ -63,5 +76,3 @@ You can drop me an email to mailto:DFEW.Entwickler@gmail.com. My preferred langu
 For German speaking users a support thread in German ThinkPad-Forum.de is available:
 
 [http://thinkpad-forum.de/threads/121896-Projektvorstellung-Tpfanco-Wartung-und-Paketierung-von-tp-fan Projektvorstellung: Tpfanco - Wartung und Paketierung von tp-fan]
-
-
