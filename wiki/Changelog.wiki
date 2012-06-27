@@ -2,7 +2,7 @@
 #labels Featured
 = 2012-06-27 =
 tpfan-admin (0.96.3)
- *accept kdesudo as an alternative to gksudo
+ * accept kdesudo as an alternative to gksudo
 
 = 2012-06-03 =
 tpfand-profiles (20120603)
