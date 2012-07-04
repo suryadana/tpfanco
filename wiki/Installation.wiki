@@ -1,5 +1,4 @@
 #summary Installation instructions
-#labels Phase-Deploy,Featured
 
 = Supported Ubuntu versions =
 
