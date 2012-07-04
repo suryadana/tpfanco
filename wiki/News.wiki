@@ -1,0 +1,6 @@
+#summary Project News
+
+= Project News =
+
+== 2012-05-20 ==
+The project is alive and doing fine. At the moment I'm very busy finishing my college studies, but I've also been working on fixing Issue 1 and Issue 2. So far, Issue 2 is almost fixed, but Issue 1 requires a significant code rewrite of tpfan-admin, which I haven't done yet. I'm also thinking about adding sensors for SMART and NVidia graphics, but don't expect this to happen too soon. 
