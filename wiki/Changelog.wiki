@@ -1,5 +1,4 @@
 #summary Changelog
-#labels Featured
 = 2012-06-27 =
 tpfan-admin (0.96.3)
  * accept kdesudo as an alternative to gksudo
