@@ -1,5 +1,4 @@
 #summary Frequently asked questions
-#labels Phase-Deploy,Featured
 = Frequently asked questions =
 
 <wiki:toc max_depth="2" />
