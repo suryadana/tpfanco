@@ -1,4 +1,7 @@
+  * [https://code.google.com/p/tpfanco/wiki/News Project News]
   * [https://code.google.com/p/tpfanco/wiki/Changelog Changelog]
+  * [https://code.google.com/p/tpfanco/wiki/Installation Installation instrutctions]
+  * [https://code.google.com/p/tpfanco/wiki/ToDo ToDo]
   * [https://code.google.com/p/tpfanco/wiki/Screens Screenshots]
   * [https://code.google.com/p/tpfanco/wiki/FAQ FAQ]
-  * [https://code.google.com/p/tpfanco/wiki/Installation Installation]
+  
