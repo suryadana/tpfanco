@@ -1,3 +1,19 @@
 #summary ToDo
 
 = Project To-Do List =
+
+loose collection of ideas/known bugs for the experimental versions
+
+  * tpfand can't read profile files properly (profile_override=False)
+  * sensor_names list indices are strings (must be integers)!
+  * add ability to load arbitrary profile files
+  * machine_id in profile
+  * failure of "modprobe -r thinkpad_acpi" should trigger reboot 
+  * use default hwmon sensor if ibm_thermal is not available : /sys/devices/virtual/hwmon/hwmon0/temp1_input
+  * tpfand should be able to ouptut debug messages to a log file or to syslog
+  * correction factors for hwmon?
+  * move tpfand from /usr/sbin to /usr/bin
+  * pygtk require (Lucid and Squeeze/Wheezy)
+  * switch to Python 3 and Gtk3?
+  * Lucid support must be dropped at some point (EOL 04/2013 ??)
+  * A lot of work to do in tpfan-admin ...
