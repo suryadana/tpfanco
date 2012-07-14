@@ -1,0 +1,101 @@
+#! /usr/bin/python
+# -*- coding: utf8 -*-
+#
+# tp-fancontrol - controls the fan-speed of IBM/Lenovo ThinkPad Notebooks
+# Copyright (C) 2011-2012 Vladyslav Shtabovenko
+# Copyright (C) 2007-2009 Sebastian Urban
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
+#
+
+import sys
+if not ("/usr/share/pyshared" in sys.path):
+    sys.path.append("/usr/share/pyshared")
+
+import pygtk
+pygtk.require('2.0')
+import gtk, gtk.glade, gobject, gtk.gdk
+import os
+import dbus
+import dbus.service
+from dbus.mainloop.glib import DBusGMainLoop
+import gettext
+
+from tpfanadmin import build, temperaturedialog
+
+class TpfanAdmin(object):
+
+    data_dir = None
+
+    def __init__(self,debug):
+
+        if debug:
+          self.data_dir = os.getcwd().rsplit("/",1)[0] + "/share/"
+        else:
+          self.data_dir = build.data_dir
+
+        # i18n
+        gtk.glade.bindtextdomain(build.gettext_domain, build.locale_dir)
+        gtk.glade.textdomain(build.gettext_domain)
+
+        # D-Bus
+        gobject.threads_init()
+        dbus.mainloop.glib.DBusGMainLoop(set_as_default=True)
+        system_bus = dbus.SystemBus()
+
+        # try connecting to tpfand
+        try:
+            controller_proxy = system_bus.get_object("org.tpfanco.tpfand", "/Control")
+            controller = dbus.Interface(controller_proxy, "org.tpfanco.tpfand.Control")
+            act_settings_proxy = system_bus.get_object("org.tpfanco.tpfand", "/Settings")
+            act_settings = dbus.Interface(act_settings_proxy, "org.tpfanco.tpfand.Settings")
+        except Exception, ex:
+            print "Error connecting to tpfand: ", ex
+            msgdialog = gtk.MessageDialog(None, gtk.DIALOG_MODAL, gtk.MESSAGE_ERROR, gtk.BUTTONS_CLOSE,
+                                          _("Unable to connect to ThinkPad Fan Control daemon (tpfand).\n\n"
+                                            "Please make sure you are running this program on a supported IBM/Lenovo ThinkPad, a recent thinkpad_acpi module is loaded with fan_control=1 and tpfand has been started."))
+            msgdialog.set_title(_("ThinkPad Fan Control Configuration"))
+            msgdialog.run()
+            exit(1)
+
+        # check required daemon version
+        daemon_version = controller.get_version()
+        if daemon_version < build.required_daemon_version:
+            msgdialog = gtk.MessageDialog(None, gtk.DIALOG_MODAL, gtk.MESSAGE_ERROR, gtk.BUTTONS_CLOSE,
+                                          _("The version of the ThinkPad Fan Control daemon (tpfand) installed on your system is too old.\n\n"
+                                            "This version of tpfan-admin requires tpfand %s or later, however tpfand %s is installed on your system.") % (build.required_daemon_version, daemon_version))
+            msgdialog.set_title(_("ThinkPad Fan Control Configuration"))
+            msgdialog.run()
+            exit(2)
+
+        # Load Glade file
+        my_xml = gtk.glade.XML(self.data_dir + 'tpfan-admin.glade')
+
+        # Load icons
+        gtk.window_set_default_icon_from_file(self.data_dir + build.icon_filename)
+
+        # Init dialogs
+        temperature_dialog = temperaturedialog.TemperatureDialog(my_xml,act_settings,controller,self.data_dir)
+        temperature_dialog.run()
+
+
+
+if __name__ == "__main__":
+    debug = False
+
+    if "--debug" in sys.argv:
+        debug = True
+
+    app = TpfanAdmin(debug)
+
