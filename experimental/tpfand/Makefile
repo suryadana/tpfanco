@@ -34,7 +34,6 @@ install: all
 	install -m 755 etc/acpi/resume.d/acpi-start.sh $(DESTDIR)/etc/acpi/resume.d/91-tpfand-start.sh
 	install -d $(DESTDIR)/etc/modprobe.d
 	install -m 644 etc/modprobe.d/tpfand.conf $(DESTDIR)/etc/modprobe.d/
-	if [ ! -e $(DESTDIR)/etc/tpfand.conf ] ; then install -m 644 etc/tpfand.conf $(DESTDIR)/etc/tpfand.conf ; fi
 	echo Installation complete.
 	echo You still need to create links to the init script.
 
@@ -48,7 +47,6 @@ uninstall:
 	rm -f $(DESTDIR)/etc/acpi/suspend.d/09-tpfand-stop.sh
 	rm -f $(DESTDIR)/etc/acpi/resume.d/91-tpfand-start.sh
 	rm -f $(DESTDIR)/etc/modprobe.d/tpfand.conf
-	rm -f $(DESTDIR)/etc/tpfand.conf
 
 
 

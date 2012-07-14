@@ -399,6 +399,7 @@ class Settings(dbus.service.Object):
     @dbus.service.method("org.tpfanco.tpfand.Settings", in_signature="", out_signature="a{is}")
     def get_sensor_names(self):
         """returns the sensor names"""
+        print self.sensor_names
         return self.sensor_names
 
     @dbus.service.method("org.tpfanco.tpfand.Settings", in_signature="a{is}", out_signature="")

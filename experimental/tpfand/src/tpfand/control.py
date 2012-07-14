@@ -231,8 +231,8 @@ class Control(dbus.service.Object):
                 for i in xrange(len(val)):
                     if val[i] not in self.act_settings.ibm_thermal_disabled_sensor_tokens:
                         elements.append(int(val[i]))
-                    else:
-                        elements.append(0)
+                    #else:
+                    #    elements.append(0)
                 thermal_file.close()
                 return elements
             except IOError, e:
