@@ -19,5 +19,6 @@ loose collection of ideas/known bugs for the experimental versions
   * systemd/upstart support
   * python logging module for debug output
   * implement unit tests
+  * update tpfan-admin translations
   * use /usr/share/pyshared only on Debian-based systems (.configure)
   * A lot of work to do in tpfan-admin ...
