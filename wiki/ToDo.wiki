@@ -16,4 +16,8 @@ loose collection of ideas/known bugs for the experimental versions
   * pygtk require (Lucid and Squeeze/Wheezy)
   * switch to Python 3 and Gtk3?
   * Lucid support must be dropped at some point (EOL 04/2013 ??)
+  * systemd/upstart support
+  * python logging module for debug output
+  * implement unit tests
+  * use /usr/share/pyshared only on Debian-based systems (.configure)
   * A lot of work to do in tpfan-admin ...
