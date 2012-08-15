@@ -1,0 +1,65 @@
+#summary tpfand configuration options
+
+= tpfand without tpfan-admin =
+
+If you prefer not to use tpfan-admin, it's also possible to configure tpfand without it. To change tpfand configuration you need to edit /etc/tpfand.conf
+
+== tpfand.conf options ==
+
+*enabled* = [True/False] 
+This option enables or disables fan control. If enabled is set to False, tpfand will do nothing and let BIOS control the fan.
+
+*override_profile* = [True/False]
+This option is relevant only if you installed tpfand-profiles and a profile is available for your machine. Setting override_profile to True will allow tpfand to use the supplied profile. Setting it to False means that you want to specify your own trigger settings and ignore existing profile
+
+*hysteresis* = [0-10]
+This option influences the behavior of tpfand when the temperature goes down. Let's suppose that you set a trigger on the CPU temperature such that, for temperatures lower than 45°C, the fan speed is set to Level 1. As soon as the temperature gets higher, the fan is switched to Level 2. After the fan has been activated, the CPU temperature will usually go down and at some point reach the 45°C threshold. When hysteresis is set to 0, tpfand will switch to Level 1 immediately after the temperature drops below 45°C. If hysteresis is set to x, tpfand will keep the current fan level until the temperature becomes (45-x)°C. For instance, if you set it to 5, the fan will not switch to Level 1 until the temperature becomes lower than 40°C. Such behavior can greatly help to prevent fan pulsing, and it's recommended to keep hysteresis at something between 3 and 6. The default value is 3.
+
+== trigger settings ==
+Triggers are set using the following syntax:
+[[ Sensor number]]. [[ Sensor name]] = [Temperature:Fan level] [Temperature:Fan level] [Temperature:Fan level] ...
+Sensor number corresponds to the position of the sensor /proc/acpi/ibm/thermal. Sensor name is a description of the sensor. Temperature defines the starting point of an interval and Fan level specifies the fan regime in this interval. Fan level accepts following variables:<br>
+|| 0 || fan is off ||
+|| 2 || fan level 1 ||
+|| 3 || fan level 2 ||
+|| 4 || fan level 3 ||
+|| 5 || fan level 4 ||
+|| 6 || fan level 5 ||
+|| 7 || fan level 6 ||
+|| 8 || fan level 7 ||
+|| 254 || disengaged ||
+|| 255 || auto (fan is controlled by the BIOS) ||
+|| 256 || full speed ||
+
+If you're not familiar with the thinkpad_acpi fan levels, please visit
+http://www.thinkwiki.org/wiki/How_to_control_fan_speed
+
+== Example ==
+Below you can find a working example of tpfand.conf
+
+{{{
+enabled = True
+override_profile = True
+
+0. Sensor 0 = 0:0 55:2 60:255 
+1. Sensor 1 = 0:0 55:2 60:255 
+2. Sensor 2 = 0:0 40:2 45:4 50:255 
+3. Sensor 3 = 0:255 
+4. Sensor 4 = 0:0 40:2 45:255 
+5. Sensor 5 = 0:255 
+6. Sensor 6 = 0:0 40:2 45:255 
+7. Sensor 7 = 0:255 
+8. Sensor 8 = 0:0 50:2 55:255 
+9. Sensor 9 = 0:0 55:2 60:255 
+10. Sensor 10 = 0:0 56:2 60:4 65:255 
+11. Sensor 11 = 0:255 
+12. Sensor 12 = 0:255 
+13. Sensor 13 = 0:255 
+14. Sensor 14 = 0:255 
+15. Sensor 15 = 0:255 
+
+hysteresis = 3
+}}}
+
+
+
