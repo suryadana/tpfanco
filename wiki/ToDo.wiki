@@ -3,7 +3,7 @@
 = Project To-Do List =
 
 loose collection of ideas/known bugs for the experimental versions
-
+  * renove python-dmidecode, we can get bios, vendor etc via /sys/class/dmi/id/
   * tpfand can't read profile files properly (profile_override=False)
   * sensor_names list indices are strings (must be integers)!
   * add ability to load arbitrary profile files
