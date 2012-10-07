@@ -51,3 +51,38 @@ sudo make install
 /etc/init.d/tpfand restart
 }}}
 Depending on the errors you get, you will probably have to modify the tpfand init script or other parts of the package. Good luck!
+
+= Gentoo (thanks to Maik P.) =
+first check if a previous version of tpfand is running, if so kill it:
+{{{
+killall tpfand (as root))
+}}}
+install python-dmidecode:
+{{{
+wget https://launchpad.net/ubuntu/+archive/primary/+files/python-dmidecode_3.10.11.orig.tar.gz
+tar -xf python-dmidecode_3.10.11.orig.tar.gz
+cd python-dmidecode-3.10.11
+sudo make install
+}}}
+install tpfand:
+{{{
+svn checkout http://tpfanco.googlecode.com/svn/trunk/ tpfanco-read-only
+cd tpfanco-read-only/tpfand
+sudo make install
+sudo tpfand start
+}}}
+install tpfan-admin:
+{{{
+cd ../tpfan-admin/
+}}}
+change Makefile for python2.7 line 19 and 20 into (first two lines
+below install: all)
+{{{
+install -d ${DESTDIR}/usr/lib/python2.7/site-packages/tpfanadmin
+install -m 644 src/tpfanadmin/*
+${DESTDIR}/usr/lib/python2.7/site-packages/tpfanadmin
+}}}
+}}}
+sudo make install
+sudo tpfan-admin
+{{{
