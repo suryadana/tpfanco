@@ -82,7 +82,7 @@ install -d ${DESTDIR}/usr/lib/python2.7/site-packages/tpfanadmin
 install -m 644 src/tpfanadmin/*
 ${DESTDIR}/usr/lib/python2.7/site-packages/tpfanadmin
 }}}
-}}}
+{{{
 sudo make install
 sudo tpfan-admin
-{{{
+}}}
