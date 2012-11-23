@@ -82,7 +82,16 @@ install -d ${DESTDIR}/usr/lib/python2.7/site-packages/tpfanadmin
 install -m 644 src/tpfanadmin/*
 ${DESTDIR}/usr/lib/python2.7/site-packages/tpfanadmin
 }}}
+as user run
 {{{
-sudo make install
-sudo tpfan-admin
+make
 }}}
+then, as root run
+{{{
+make install
+}}}
+If the installation process is successful, you should run
+{{{
+tpfan-admin
+}}}
+as root to activate and configure tpfanco
