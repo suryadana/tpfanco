@@ -321,7 +321,7 @@ class Settings(dbus.service.Object):
         self.override_profile  = self.current_config["override_profile"]
         self.enabled = self.current_config["enabled"]
 
-        if self.override_profile:
+        if self.override_profile or not self.profile_available:
             dataset = self.current_config
         else:
             dataset = self.current_profile
