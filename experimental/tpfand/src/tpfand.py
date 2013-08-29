@@ -36,10 +36,12 @@ class Tpfand(object):
 
     quiet = False
     debug = False
+    noibmthermal = False
 
-    def __init__(self,quiet,debug):
+    def __init__(self,quiet,debug,noibmthermal):
         self.quiet = quiet
         self.debug = debug
+        self.noibmthermal = noibmthermal
 
 
         self.start_fan_control()
@@ -133,7 +135,7 @@ class Tpfand(object):
 
 
         # create and load configuration
-        act_settings = settings.Settings(self.system_bus,"/Settings",self.tpfand_polkit,build,self.debug)
+        act_settings = settings.Settings(self.system_bus,"/Settings",self.tpfand_polkit,build,self.debug,self.noibmthermal)
 
         # create controller
         self.controller = control.Control(self.system_bus,"/Control",act_settings,self.tpfand_polkit,build)
@@ -175,11 +177,13 @@ class Tpfand(object):
 if __name__ == "__main__":
     quiet = False
     debug = False
+    noibmthermal = False
     recreate_config = False
     if "--quiet" in sys.argv:
         quiet = True
-
     if "--debug" in sys.argv:
         debug = True
+    if "--noibmthermal" in sys.argv:
+        noibmthermal = True
 
-    app = Tpfand(quiet,debug)
+    app = Tpfand(quiet,debug,noibmthermal)

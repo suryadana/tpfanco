@@ -103,10 +103,11 @@ class Settings(dbus.service.Object):
     # comments for the last loaded profile
     profile_comment = ""
 
-    def __init__(self, bus, path, tpfand_polkit, build, debug):
+    def __init__(self, bus, path, tpfand_polkit, build, debug, noibmthermal):
         self.tpfand_polkit = tpfand_polkit
         self.build = build
         self.debug = debug
+        self.noibmthermal = noibmthermal
         for i in xrange(self.max_hwmon_sensors):
             self.tp_hwmon_sensors.append(build.tp_hwmon + "temp" + str(i+1) + "_input")
         print  self.tp_hwmon_sensors
@@ -167,7 +168,10 @@ class Settings(dbus.service.Object):
         """detects available sensors and creates new configuration file"""
         sensors=""
         working_sensors={}
-        ibm_thermal_on, ibm_thermal_working_sensors = self.check_ibm_thermal()
+        if self.noibmthermal:
+          ibm_thermal_on = False
+        else:
+          ibm_thermal_on, ibm_thermal_working_sensors = self.check_ibm_thermal()
         tp_hwmon_on, tp_hwmon_working_sensors = self.check_tp_hwmon()
         lm_sensors_on, lm_sensors_working_sensors = self.check_lm_sensors(self.default_sensors)
 

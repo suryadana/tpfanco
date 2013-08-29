@@ -109,26 +109,26 @@ class Control(dbus.service.Object):
             new_speed = 0
             if self.debug:
                 print "       Current sensor values:"
-            for id in xrange(len(temps)):
-                temp = temps[id]
+            for pos in range(len(temps)):
+                temp = temps[pos]
                 if temp != 0:
-                    points = self.act_settings.trigger_points[id]
+                    points = self.act_settings.trigger_points[pos]
                     speed = 0
                     if self.debug:
-                        print "           Sensor " + str(id) +": " + str(temp)
+                        print "           Sensor " + str(pos) +": " + str(temp)
                     # check if temperature is above hysteresis shutdown point
-                    if id in self.current_trip_temps:
-                        if temp >= self.current_trip_temps[id]:
-                            speed = self.current_trip_speeds[id]
+                    if pos in self.current_trip_temps:
+                        if temp >= self.current_trip_temps[pos]:
+                            speed = self.current_trip_speeds[pos]
                         else:
-                            del self.current_trip_temps[id]
-                            del self.current_trip_speeds[id]
+                            del self.current_trip_temps[pos]
+                            del self.current_trip_speeds[pos]
 
                     # check if temperature is over trigger point
                     for trigger_temp, trigger_speed in points.iteritems():
                         if temp >= trigger_temp and speed < trigger_speed:
-                            self.current_trip_temps[id] = trigger_temp - self.act_settings.hysteresis
-                            self.current_trip_speeds[id] = trigger_speed
+                            self.current_trip_temps[pos] = trigger_temp - self.act_settings.hysteresis
+                            self.current_trip_speeds[pos] = trigger_speed
                             speed = trigger_speed
 
                     new_speed = max(new_speed, speed)
@@ -269,7 +269,7 @@ class Control(dbus.service.Object):
             return elements
 
         elif self.act_settings.sensors == "lm_sensors":
-            for id, path in self.act_settings.lm_sensors.iteritems():
+            for pos, path in self.act_settings.lm_sensors.iteritems():
                 try:
                     lm_sensor_file = open(path, "r")
                     val = lm_sensor_file.readline().rstrip("\n")
