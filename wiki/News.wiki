@@ -2,5 +2,8 @@
 
 = Project News =
 
+== 2013-08-31 == 
+Even though there was not much activity recently, I'm still working on the tpfanco in my spare time. The most changes will be occuring in the experimental branch, because the new code there is still not mature enough to be declared stable. I was also thinking that it would be nice to have some kind of compatibility list for the current and older ThinkPad models, in order to know which models have "/proc/acpi/ibm/thermal" and which not. Such a list might be also helpful for other fan control projects. I will see how to implement this in a good way.
+
 == 2012-05-20 ==
 The project is alive and doing fine. At the moment I'm very busy finishing my college studies, but I've also been working on fixing Issue 1 and Issue 2. So far, Issue 2 is almost fixed, but Issue 1 requires a significant code rewrite of tpfan-admin, which I haven't done yet. I'm also thinking about adding sensors for SMART and NVidia graphics, but don't expect this to happen too soon. 
