@@ -2,6 +2,11 @@
 
 = Project News =
 
+== 2014-04-19 ==
+
+Now we have an official Ubuntu PPA at Launchpad 
+[https://launchpad.net/~vl-sht/+archive/tpfanco]
+
 == 2014-03-17 == 
 The experimental branch of tpfand now has some basic systemd support. Since I recently switched to Fedora from Ubuntu this was a necessity for me. I will monitor how stable this works on my X200 with Fedora 20, but since I rarely use the laptop now, it make take some time to discover bugs. I know that I need to write a proper autoconf to account for distros with sysvinit or systemd, but for now please just use "make install-sysvinit" or "make install-systemd" respectively. tpfan-admin is still not working with the new tpfand :(  
 
