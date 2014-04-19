@@ -1,17 +1,21 @@
 #summary Installation instructions
 
-= Supported Ubuntu versions =
+= Source code =
 
-At the moment all Ubuntu versions (including Kubuntu, Xubuntu and Lubuntu) beginning with 10.04 are officially supported.
+The source code is available from our 
+[https://code.google.com/p/tpfanco/source/checkout subversion repository]
 
-I expect it to work with other Debian-based distributions like  Debian and Linux Mint as well, although I didn't test that explicitly.
+= Binary Packages =
 
-To install simply download 3 deb packages from the [http://code.google.com/p/tpfanco/ project's front page]: _tpfand_, _tpfan-admin_ and _tpfan-profiles_.
+Since Google Code doesn't allow binary downloads anymore, I cannot provide packages on this site.
 
-First install _tpfand_, then _tpfan-profiles_ and finally _tpfan-admin_. Reboot your system. Now open tpfan-admin and click *Unlock*. Select *Control system fan by software*. If there's no profile for your Thinkpad you will have to configure fan speeds by hand.
+At the moment only deb packages are available. If you use Ubuntu or a Ubuntu-based distribution, use our official 
+[https://launchpad.net/~vl-sht/+archive/tpfanco PPA] on Launchpad. Currently we support Ubuntu 12.04, 13.10 and 14.04.
 
-= Unsupported Ubuntu versions =
-For Ubuntu versions older than 10.04 use old packages from [https://launchpad.net/~tp-fan/+archive/ppa Sebastian Urban's Launchpad page]
+If you use Debian, just download the packages from the [https://launchpad.net/~vl-sht/+archive/tpfanco PPA] and install them one by one
+
+= Using tpfanco = 
+After you install the tpfanco packages, you need to reboot your system.  Then open tpfan-admin and click *Unlock*. Select *Control system fan by software*. If there's no profile for your Thinkpad you will have to configure fan speeds by hand
 
 = Possible confusements =
 
