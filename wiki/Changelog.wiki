@@ -1,4 +1,13 @@
 #summary Changelog
+
+= 2014-04-19 =
+tpfan-admin (0.96.4)
+ * change shebangs to python2.7, fix problems with debian packages
+tpfand (0.95.3)
+ * change shebangs to python2.7, fix problems with debian packages
+tpfand-profiles (0.90.0)
+ * add new profile for T400 (2768Z1B) (thanks to Arvid R.)
+
 = 2012-06-27 =
 tpfan-admin (0.96.3)
  * accept kdesudo as an alternative to gksudo
